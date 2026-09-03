@@ -143,3 +143,15 @@ This material was developed as a learning exercise combining:
 - Real-world customer onboarding scenarios from service platforms
 
 The two-notebook structure mirrors how practitioners move from ad-hoc simulation to grounded analytical theory.
+
+---
+
+## Contact
+
+<div align="center">
+  <img src="images/thumbnails/ehcastroh_teach_banner_flower.png" alt="ehcastroh" width="90" style="border-radius: 50%;" />
+
+  <sub>ehcastroh</sub>
+
+  <a href="https://github.com/ehcastroh">GitHub</a> · <a href="https://www.linkedin.com/in/ehcastroh/">LinkedIn</a>
+</div>
