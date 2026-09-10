@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(prep-teaching-repo)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(python3 *)",
+      "Bash(bash *)",
+      "Read(//home/elcasnix/Projects/Claude_Config/skills/prep-teaching-repo/scripts/**)"
+    ]
+  }
+}
