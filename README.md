@@ -74,24 +74,36 @@ This notebook grounds simulation in analytical queueing theory. We model a custo
 
 ## How to Run
 
-### From a clean clone:
+Prerequisites: [Nix](https://nixos.org/download) with flakes enabled.
+
+This repo's Python environment is fully project-local - a `flake.nix` devShell provides Python and `uv`, and `uv` installs every dependency pinned in `pyproject.toml`/`uv.lock` into a `.venv` inside this directory. Nothing is installed system-wide, and nothing here needs to be added to `home.nix` or `configuration.nix`.
 
 ```bash
-# Install dependencies (if not already present)
-pip install simpy numpy jupyter
+# Clone the repo
+git clone https://github.com/ehcastroh-teach/Customer_Onboarding_Discrete_Simulation.git
+cd Customer_Onboarding_Discrete_Simulation
 
-# Start Jupyter
-jupyter notebook
+# Enter the project's dev shell - this also runs `uv sync` automatically
+# the first time, creating .venv with every pinned dependency installed
+nix develop
+
+# Register the project venv as a Jupyter kernel (one-time)
+uv run python -m ipykernel install --user --name customer-onboarding-discrete-simulation
+
+# Launch Jupyter and open notebooks in order
+uv run jupyter notebook
 
 # Open 01_help_desk_simulation.ipynb or 02_tenant_onboarding_simulation.ipynb
 # Run cells top-to-bottom (clean kernel restart between notebooks)
 ```
 
+If you don't use Nix, any Python 3.12+ environment with `uv` installed works the same way: run `uv sync` in place of `nix develop` and use the `uv run ...` commands above unchanged.
+
 ### Dependencies:
 
 - **SimPy** (4.x): discrete event simulation framework
 - **NumPy** (2.x): numerical operations and random sampling
-- **Python** (3.8+): generators, dataclasses, standard library
+- **Python** (3.12): generators, dataclasses, standard library
 
 ### Running simulations:
 
